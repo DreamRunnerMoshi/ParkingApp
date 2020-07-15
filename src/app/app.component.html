@@ -1,0 +1,33 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation"></mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="menu-bar mat-elevation-z1">
+      <div fxHide.gt-xs>
+        <button mat-icon-button (click)="sidenav.toggle()">
+        </button>
+      </div>
+      <div>
+        <a routerLink="/home"> Parking App </a>
+      </div>
+      <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+          <li>
+            <a routerLink="/home">
+              <span class="label">Home</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/space">
+              <span class="label">Space</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </mat-toolbar>
+    <main>
+      <div style="padding-top: 50px; padding-bottom: 50px;">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
