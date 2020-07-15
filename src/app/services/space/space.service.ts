@@ -13,7 +13,7 @@ export class SpaceService {
   }
 
   public getTotalSpaceCount(): number {
-    return JSON.parse(localStorage.getItem('totalSpace'));
+    return JSON.parse(localStorage.getItem('totalSpaceCount'));
   }
 
 }

@@ -12,6 +12,18 @@ export class BookingService {
     var bookins = JSON.parse(localStorage['bookings']);
     return bookins;
   }
+
+  public getTotalVehicleServed(): number {
+    return this.getAllBookings().length;
+  }
+
+  public getTotalEarnings(): number {
+    var totalEarning = 0;
+    this.getAllBookings().forEach(_ => {
+      if (!_.isOccupied) totalEarning += _.price;
+    });
+    return totalEarning;
+  }
 }
 
 export class Booking {

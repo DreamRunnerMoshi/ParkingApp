@@ -26,7 +26,7 @@ export class AppComponent {
     }
 
     localStorage.setItem('spaces', JSON.stringify(spaces));
-    
+    localStorage.setItem('totalSpaceCount', "" + spaces.length);
     var vehicles = [{
       id: 1,
       name: 'vehicle1',

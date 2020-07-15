@@ -4,6 +4,8 @@ import { SnackbarService } from '../services/utility/snackbar-service';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { SpaceService } from '../services/space/space.service';
 import { Space } from '../models/space';
+import { VehicleService } from '../services/vehicle/vehicle.service';
+import { BookingService } from '../services/booking/booking.service';
 
 @Component({
   selector: 'app-home',
@@ -13,21 +15,26 @@ import { Space } from '../models/space';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private _snackBar: SnackbarService, private dialog: MatDialog, private spaceService: SpaceService) {
+  constructor(private spaceService: SpaceService, private vehicleService: VehicleService, private bookinService: BookingService) {
   }
 
+  totalSpace: number;
+  totalVehicleServed: number;
+  totalEarning: number;
 
   ngOnInit(): void {
-    
+    this.totalSpace = this.spaceService.getTotalSpaceCount();
+    this.totalVehicleServed = this.bookinService.getTotalVehicleServed();
+    this.totalEarning = this.bookinService.getTotalEarnings();
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(DialogContentExampleDialog);
+  // openDialog() {
+  //   const dialogRef = this.dialog.open(DialogContentExampleDialog);
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log(`Dialog result: ${result}`);
+  //   });
+  // }
 }
 
 @Component({

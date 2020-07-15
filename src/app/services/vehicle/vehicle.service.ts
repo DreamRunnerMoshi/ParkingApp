@@ -10,6 +10,8 @@ export class VehicleService {
   public getAllVehicle(): Array<Vehicle> {
     return JSON.parse(localStorage.getItem('vehicles'));
   }
+
+  
 }
 
 export class Vehicle {
