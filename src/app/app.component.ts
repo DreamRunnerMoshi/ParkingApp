@@ -47,8 +47,8 @@ export class AppComponent {
     var twoHour = new Date();
     twoHour.setHours(twoHour.getHours() - 2);
 
-    var bookings = [{ id: 1, vehicleNo: 1, spaceId: 1, isOccupied: true, startTime: Date() },
-    { id: 2, vehicleNo: 2, spaceId: 2, isOccupied: true, startTime: Date() },
+    var bookings = [{ id: 1, vehicleNo: 1, spaceId: 1, isOccupied: true, startTime: moment().add(-1, 'hours').format('YYYY-MM-DD hh:mm:ss') },
+    { id: 2, vehicleNo: 2, spaceId: 2, isOccupied: true, startTime: moment().add(-3, 'hours').format('YYYY-MM-DD hh:mm:ss') },
     { id: 3, vehicleNo: 3, spaceId: 3, isOccupied: false, startTime: moment().add(-5, 'hours').format('YYYY-MM-DD hh:mm:ss'), endTime: Date(), price: 60 }];
     localStorage.setItem('bookings', JSON.stringify(bookings));
   }

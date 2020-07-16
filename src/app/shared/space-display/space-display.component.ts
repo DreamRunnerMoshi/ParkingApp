@@ -34,7 +34,8 @@ export class SpaceDisplayComponent implements OnInit {
 
         this.bookingMap[_.spaceId] = {
           vehicleName: vehicle.name,
-          image: vehicle.image
+          image: vehicle.image,
+          bookingTime: _.startTime
         };
       }
     });
